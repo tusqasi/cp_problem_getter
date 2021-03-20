@@ -2,12 +2,14 @@ import os
 import get_question
 
 os.chdir("../questions/") # Should this be hard coded or user defined
-existing_ques = os.getcwd()
+existing_ques = os.listdir()
 ques_name = get_question.get_meta()
-if (ques_name) in existing_ques:
+
+# This handles folder name collision
+if ques_name in existing_ques:
     if ques_name[-1].isdigit():
         ques_num = int(ques_name.split("_")[-1])
-        ques_name = ques_name[:-1] + str(1+ques_num)
+        ques_name = f"{ques_name[:-1]}{1+ques_num}"
     else:
         ques_name += "_01"
 

@@ -19,9 +19,9 @@ os.chdir(ques_name)
 # save get_question.inputs() to in.txt
 
 def write_this(file_name: str,data: list):
-    with open("file_name", mode='w') as fp:
+    with open(file_name, mode='w') as fp:
         for _ in data:
             fp.write(_)
-
-write_this("in.txt", get_question.get_io()[0])
-write_this("out.txt", get_question.get_io()[1])
+ip, op = get_question.get_io()
+write_this("in.txt", ip)
+write_this("out.txt", op)

@@ -24,7 +24,7 @@ def get_io():
            outputs.append(_[1])
        else:
            inputs.append(_[1])
-   return [inputs, outputs]
+   return inputs, outputs
 def get_meta():
     question_name = soup.find("div", class_="title")
     # TODO: Make this robust

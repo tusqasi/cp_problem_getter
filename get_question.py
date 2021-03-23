@@ -26,6 +26,7 @@ def get_io():
            inputs.append(_[1])
    return inputs, outputs
 def get_meta():
+    return_obj = dict()
     question_name = soup.find("div", class_="title")
     # TODO: Make this robust
     return question_name.contents[0].split('.',1)[1][1:].lower()
